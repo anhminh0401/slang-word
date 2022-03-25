@@ -31,8 +31,11 @@ public class Util {
         }
     }
 
-    public static void insertSpace(int content, int maxLength) {
-        for (int i = content; i < maxLength; i++)
-            System.out.print(" ");
+    // hàm tạo khoảng cách để code nhìn đẹp hơn
+    public static String insertSpace(int contentLength, int maxLength) {
+        String result = "";
+        for (int i = contentLength; i < maxLength; i++)
+            result = result + " ";
+        return result;
     }
 }
