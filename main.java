@@ -32,8 +32,8 @@ public class main {
         }
 
         try (BufferedReader fHistory = new BufferedReader(new FileReader("history.txt"))) {
-            int n = fHistory.read();
-            fHistory.readLine();
+            int n = Integer.parseInt(fHistory.readLine()) ;
+            // fHistory.readLine();
             for (int i=0;i<n;i++)
                 history.add(fHistory.readLine());
             fHistory.close();
@@ -136,7 +136,7 @@ public class main {
     public static void saveFiles() {
         // Lưu file history
         try (BufferedWriter fHistory = new BufferedWriter(new FileWriter("history.txt"))) {
-            fHistory.write(history.size());
+            fHistory.write(String.valueOf(history.size()));
             fHistory.write("\n");
             for (int i = 0; i < history.size(); i++) {
                 fHistory.write(history.get(i));
