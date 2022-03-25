@@ -18,7 +18,7 @@ public class Util {
         System.out.println("0. Thoat chuong trinh");
         System.out.println("--------------------------------------------------");
     }
-    
+
     public static void cleanScreen() {
         // code xóa màn hình tham khảo tại:
         // https://daynhauhoc.com/t/clear-console-screen-trong-java/22290/6
@@ -29,5 +29,10 @@ public class Util {
                 Runtime.getRuntime().exec("clear");
         } catch (IOException | InterruptedException ex) {
         }
+    }
+
+    public static void insertSpace(int content, int maxLength) {
+        for (int i = content; i < maxLength; i++)
+            System.out.print(" ");
     }
 }
