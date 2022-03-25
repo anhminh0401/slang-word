@@ -15,6 +15,7 @@ public class Util {
         System.out.println("8. Random slang word");
         System.out.println("9. Do vui voi slang word");
         System.out.println("10. Do vui voi definition");
+        System.out.println("0. Thoat chuong trinh");
         System.out.println("--------------------------------------------------");
     }
     

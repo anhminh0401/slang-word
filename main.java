@@ -1,9 +1,8 @@
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -44,7 +43,7 @@ public class main {
                     searchSlangWord();
                     break;
                 case 2:
-
+                    searchDefinition();
                     break;
                 case 3:
 
@@ -58,13 +57,36 @@ public class main {
     }
 
     public static void searchSlangWord() {
-        System.out.print("Moi lua slang word muon tim kiem: ");
+        System.out.print("Moi nhap slang word muon tim kiem: ");
         String key = ip.nextLine();
         String result = slangWord.get(key);
         if (result == null)
             System.out.printf("Khong ton tai slang word %s", key, " trong he thong!");
         else {
             System.out.printf("Ket qua: %s", result);
+        }
+        ip.nextLine();
+    }
+
+    public static void searchDefinition() {
+        System.out.print("Moi nhap definition muon tim kiem: ");
+        String keyWord = ip.nextLine();
+        ArrayList<String> result = new ArrayList<String>();
+        for (String key : slangWord.keySet()) {
+            String defintition = slangWord.get(key);
+            if (defintition.indexOf(keyWord) != -1) {
+                result.add(key);
+            }
+        }
+        if (result.size() > 0) {
+            System.out.print("Ket qua la: ");
+            for (int i = 0; i < result.size(); i++) {
+                System.out.printf("%s", result.get(i));
+                if (i < result.size() - 1)
+                    System.out.print(", ");
+            }
+        } else {
+            System.out.print("Khong ton tai definition muon tim kiem");
         }
         ip.nextLine();
     }
