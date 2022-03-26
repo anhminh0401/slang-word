@@ -32,9 +32,9 @@ public class main {
         }
 
         try (BufferedReader fHistory = new BufferedReader(new FileReader("history.txt"))) {
-            int n = Integer.parseInt(fHistory.readLine()) ;
+            int n = Integer.parseInt(fHistory.readLine());
             // fHistory.readLine();
-            for (int i=0;i<n;i++)
+            for (int i = 0; i < n; i++)
                 history.add(fHistory.readLine());
             fHistory.close();
         } catch (IOException e) {
@@ -64,7 +64,7 @@ public class main {
                     printHistory();
                     break;
                 case 4:
-
+                    addSlangWord();
                     break;
             }
         }
@@ -146,6 +146,21 @@ public class main {
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
+        }
+    }
+
+    public static void addSlangWord() {
+        System.out.print("Moi nhap Slang word moi: ");
+        String key = ip.nextLine();
+        if (slangWord.containsKey(key)) {
+            System.out.printf("%s da ton tai", key);
+            ip.nextLine();
+        } else {
+            System.out.printf("Moi nhap Definition cua %s: ", key);
+            String definition = ip.nextLine();
+            slangWord.put(key, definition);
+            System.out.println("Da them thanh cong");
+            ip.nextLine();
         }
     }
 }
