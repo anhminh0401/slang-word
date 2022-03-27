@@ -9,8 +9,11 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Random;
 import java.util.Scanner;
+import java.util.Set;
 
 import Util.Util;
 
@@ -18,6 +21,7 @@ public class main {
     static Scanner ip = new Scanner(System.in);
     static Map<String, String> slangWord = new HashMap<>();
     static ArrayList<String> history = new ArrayList<>();
+    static Random rand = new Random();
 
     public static void main(String[] args) {
         // Kiểm tra file tồn tại hay chưa
@@ -84,6 +88,9 @@ public class main {
                     break;
                 case 7:
                     resetSlangWord();
+                    break;
+                case 8:
+                    randomSlangWord();
                     break;
             }
         }
@@ -171,7 +178,7 @@ public class main {
         // Lưu file slangword
         try {
             BufferedWriter fSlang = new BufferedWriter(new FileWriter("slang.txt"));
-           
+
             for (String key : slangWord.keySet()) {
                 fSlang.write(key + "`" + slangWord.get(key));
                 fSlang.write("\n");
@@ -293,6 +300,33 @@ public class main {
                     return;
             }
             System.out.print("Ky tu ban nhap khong dung voi yeu cau, moi nhap lai! (Y/YES, N/NO) ");
+        }
+    }
+
+    public static void randomSlangWord() {
+        Set<String> keys = slangWord.keySet();
+        
+        System.out.println("               Slang word ngau nhien             ");
+        System.out.println("Quy tac: Y/YES de tiep tuc, cac phim khac de thoat");
+        String choice = "Y";
+        while (true) {
+            if (choice.equals("Y") || choice.equals("YES")) {
+                int pos = rand.nextInt(keys.size());
+                Iterator<String> it1 = keys.iterator();
+                while (pos > 0) {
+                    it1.next();
+                    pos--;
+                }
+                String key = it1.next();
+                System.out.printf("%s", key);
+                System.out.print(Util.insertSpace(key.length(), 15)); // 15 la do dai khoang cach
+                System.out.printf("%s\n", slangWord.get(key));
+
+                System.out.print("Tiep tuc? ");
+                choice = ip.nextLine();
+                choice = choice.toUpperCase();
+            } else
+                return;
         }
     }
 }
