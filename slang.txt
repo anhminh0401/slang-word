@@ -5579,6 +5579,7 @@ NAL`Need A Life
 OTAY`Okay
 <_<`Sarcasm| look left
 NAK`Nursing At Keyboard
+NAM`NGUYEN ANH MINH
 NAP`Not A Problem
 TROL`Police patrol
 NAO`Now

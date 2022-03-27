@@ -96,6 +96,9 @@ public class main {
                 case 9:
                     quizSlangWord();
                     break;
+                case 10:
+                    quizDefinition();
+                    break;
             }
         }
         ip.close();
@@ -156,7 +159,7 @@ public class main {
         if (history.size() < 1) {
             System.out.println("Trong");
         } else {
-            for (int i = history.size() - 1; i >= 0; i--) {
+            for (int i = 0; i < history.size(); i++) {
                 System.out.printf("%s\n", history.get(i));
             }
         }
@@ -311,7 +314,7 @@ public class main {
 
         System.out.println("               Slang word ngau nhien             ");
         System.out.println("Quy tac: Y/YES de tiep tuc, cac phim khac de thoat");
-       
+
         String choice = "Y";
         while (true) {
             System.out.println("               ------------");
@@ -346,7 +349,7 @@ public class main {
                 answer.add(slangWord.get(key));
                 while (answer.size() < 4) {
                     String definition = Util.randomDefinition(slangWord);
-                    if (definition != null)
+                    if (definition != null && !definition.equals(slangWord.get(key)))
                         answer.add(definition);
                 }
 
@@ -366,10 +369,61 @@ public class main {
                 }
                 System.out.print("Dap an cua ban: ");
                 choice = ip.nextLine();
+                choice = choice.toUpperCase();
                 if (choice.equals(ans))
                     System.out.print("Chinh xac!!! Ban gioi qua!\n");
                 else
-                    System.out.printf("Tiec qua @@ Dap an chinh xac phai la %s. %s\n",ans, slangWord.get(key));
+                    System.out.printf("Tiec qua @@ Dap an chinh xac phai la %s. %s\n", ans, slangWord.get(key));
+                System.out.print("Tiep tuc? ");
+                choice = ip.nextLine();
+                choice = choice.toUpperCase();
+            } else
+                return;
+        }
+    }
+
+    public static void quizDefinition() {
+        System.out.println("               Do vui Definition            ");
+        System.out.println("Quy tac: - Y/YES de tiep tuc, cac phim khac de thoat.");
+        System.out.println("         - Nhap A, B, C, D de tra loi cau hoi voi dap an tuong ung.");
+
+        String[] ansFormat = { "A", "B", "C", "D" };
+        String choice = "Y";
+        while (true) {
+            System.out.println("               ------------");
+            if (choice.equals("Y") || choice.equals("YES")) {
+                String key = Util.randomSlang(slangWord);
+                System.out.printf("Cau hoi: %s la y nghia cua Slang word nao duoi day?\n", slangWord.get(key));
+
+                Set<String> answer = new HashSet<>();
+                answer.add(key);
+                while (answer.size() < 4) {
+                    String slang = Util.randomSlang(slangWord);
+                    if (!slang.equals(key) && !slangWord.get(slang).equals(slangWord.get(key)))
+                        answer.add(slang);
+                }
+
+                String ans = "";
+                Iterator<String> it1 = answer.iterator();
+                for (int i = 1; i <= 4; i++) {
+                    String k = it1.next();
+                    System.out.printf("%s. %s", ansFormat[i - 1], k);
+
+                    if (k.equals(key)) // lưu vị trí kết quả
+                        ans = ansFormat[i - 1];
+                    if (i % 2 == 1)
+                        System.out.print(Util.insertSpace(k.length(), 40)); // 60 dựa vào đáp án gần như dài nhất
+                    else
+                        System.out.println();
+
+                }
+                System.out.print("Dap an cua ban: ");
+                choice = ip.nextLine();
+                choice = choice.toUpperCase();
+                if (choice.equals(ans))
+                    System.out.print("Chinh xac!!! Ban gioi qua!\n");
+                else
+                    System.out.printf("Tiec qua @@ Dap an chinh xac phai la %s. %s\n", ans, key);
                 System.out.print("Tiep tuc? ");
                 choice = ip.nextLine();
                 choice = choice.toUpperCase();
