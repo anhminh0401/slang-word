@@ -69,6 +69,9 @@ public class main {
                 case 5:
                     editSlangWord();
                     break;
+                case 6:
+                    delSlangWord();
+                    break;
             }
         }
         ip.close();
@@ -79,9 +82,9 @@ public class main {
         String key = ip.nextLine();
         String result = slangWord.get(key);
         if (result == null)
-            System.out.printf("Khong ton tai slang word %s", key, " trong he thong!");
+            System.out.printf("Khong ton tai slang word %s\n", key);
         else {
-            System.out.printf("Ket qua: %s", result);
+            System.out.printf("Ket qua: %s\n", result);
         }
         // Ghi lịch sử tìm kiếm
         LocalDateTime dateTime = LocalDateTime.now();
@@ -119,7 +122,7 @@ public class main {
                 System.out.printf("%s\n", result.get(key));
             }
         } else {
-            System.out.print("Khong ton tai definition muon tim kiem");
+            System.out.println("Khong ton tai definition muon tim kiem");
         }
         ip.nextLine();
     }
@@ -156,7 +159,7 @@ public class main {
         System.out.print("Moi nhap Slang word moi: ");
         String key = ip.nextLine();
         if (slangWord.containsKey(key)) {
-            System.out.printf("%s da ton tai", key);
+            System.out.printf("%s da ton tai\n", key);
             ip.nextLine();
         } else {
             System.out.printf("Moi nhap Definition cua %s: ", key);
@@ -171,7 +174,7 @@ public class main {
         System.out.print("Moi nhap Slang word muon chinh sua: ");
         String key = ip.nextLine();
         if (!slangWord.containsKey(key)) {
-            System.out.printf("%s khong ton tai", key);
+            System.out.printf("%s khong ton tai\n", key);
             ip.nextLine();
         } else {
             System.out.printf("%s", key);
@@ -193,15 +196,44 @@ public class main {
                     slangWord.put(keyNew, definitionNew);
                 } else {
                     slangWord.put(keyNew, slangWord.get(key));
-                }  
-                slangWord.remove(key,slangWord.get(key)); 
+                }
+                slangWord.remove(key, slangWord.get(key));
             } else {
                 if (definitionNew != "") {
                     slangWord.replace(key, definitionNew);
-                }  
+                }
             }
             System.out.println("Da chinh sua thanh cong");
             ip.nextLine();
+        }
+    }
+
+    public static void delSlangWord() {
+        System.out.print("Moi nhap Slang word muon xoa: ");
+        String key = ip.nextLine();
+        if (!slangWord.containsKey(key)) {
+            System.out.printf("%s khong ton tai\n", key);
+            ip.nextLine();
+        } else {
+            System.out.printf("%s", key);
+            System.out.print(Util.insertSpace(key.length(), 15)); // 15 la do dai khoang cach
+            System.out.printf("%s\n", slangWord.get(key));
+
+            System.out.printf("Ban co chac chan muon xoa slang word %s khong? (Y/YES, N/NO) ", key);
+            while (true) {
+                String choice = ip.nextLine();
+                choice = choice.toUpperCase();
+                if (choice.equals("Y") || choice.equals("YES")) {
+                    slangWord.remove(key, slangWord.get(key));
+                    System.out.println("Da xoa thanh cong");
+                    ip.nextLine();
+                    return;
+                } else {
+                    if (choice.equals("N") || choice.equals("NO"))
+                        return;
+                }
+                System.out.print("Ky tu ban nhap khong dung voi yeu cau, moi nhap lai! (Y/YES, N/NO) ");
+            }
         }
     }
 }
