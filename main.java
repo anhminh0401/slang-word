@@ -308,13 +308,14 @@ public class main {
     }
 
     public static void randomSlangWord() {
+
         System.out.println("               Slang word ngau nhien             ");
-        System.out.println("Quy tac: ENTER de tiep tuc, cac phim khac de thoat");
+        System.out.println("Quy tac: Y/YES de tiep tuc, cac phim khac de thoat");
        
-        String choice = "";
+        String choice = "Y";
         while (true) {
             System.out.println("               ------------");
-            if (choice.equals("")) {
+            if (choice.equals("Y") || choice.equals("YES")) {
                 String key = Util.randomSlang(slangWord);
                 System.out.printf("%s", key);
                 System.out.print(Util.insertSpace(key.length(), 15)); // 15 la do dai khoang cach
@@ -330,14 +331,14 @@ public class main {
 
     public static void quizSlangWord() {
         System.out.println("               Do vui Slang word             ");
-        System.out.println("Quy tac: - ENTER de tiep tuc, cac phim khac de thoat.");
+        System.out.println("Quy tac: - Y/YES de tiep tuc, cac phim khac de thoat.");
         System.out.println("         - Nhap A, B, C, D de tra loi cau hoi voi dap an tuong ung.");
 
         String[] ansFormat = { "A", "B", "C", "D" };
-        String choice = "";
+        String choice = "Y";
         while (true) {
             System.out.println("               ------------");
-            if (choice.equals("")) {
+            if (choice.equals("Y") || choice.equals("YES")) {
                 String key = Util.randomSlang(slangWord);
                 System.out.printf("Cau hoi: %s nghia la gi\n", key);
 
