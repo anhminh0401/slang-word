@@ -1,8 +1,15 @@
 package Util;
 
 import java.io.IOException;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Random;
+import java.util.Set;
+
 
 public class Util {
+    static Random rand = new Random();
+    
     public static void menu() {
         System.out.println("----------------------MENU-----------------------");
         System.out.println("1. Tim kiem theo slang word");
@@ -37,5 +44,28 @@ public class Util {
         for (int i = contentLength; i < maxLength; i++)
             result = result + " ";
         return result;
+    }
+
+    public static String randomSlang(Map<String,String> slangWord) {
+        Set<String> keys = slangWord.keySet();
+        int pos = rand.nextInt(keys.size());
+        Iterator<String> it1 = keys.iterator();
+        while (pos > 0) {
+            it1.next();
+            pos--;
+        }
+        return it1.next();
+    }
+
+    public static String randomDefinition(Map<String,String> slangWord) {
+        Set<String> keys = slangWord.keySet();
+        int pos = rand.nextInt(keys.size());
+        Iterator<String> it1 = keys.iterator();
+        while (pos > 0) {
+            it1.next();
+            pos--;
+        }
+        
+        return slangWord.get(it1.next());
     }
 }

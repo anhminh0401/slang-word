@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Random;
@@ -91,6 +92,9 @@ public class main {
                     break;
                 case 8:
                     randomSlangWord();
+                    break;
+                case 9:
+                    quizSlangWord();
                     break;
             }
         }
@@ -304,24 +308,67 @@ public class main {
     }
 
     public static void randomSlangWord() {
-        Set<String> keys = slangWord.keySet();
-        
         System.out.println("               Slang word ngau nhien             ");
-        System.out.println("Quy tac: Y/YES de tiep tuc, cac phim khac de thoat");
-        String choice = "Y";
+        System.out.println("Quy tac: ENTER de tiep tuc, cac phim khac de thoat");
+       
+        String choice = "";
         while (true) {
-            if (choice.equals("Y") || choice.equals("YES")) {
-                int pos = rand.nextInt(keys.size());
-                Iterator<String> it1 = keys.iterator();
-                while (pos > 0) {
-                    it1.next();
-                    pos--;
-                }
-                String key = it1.next();
+            System.out.println("               ------------");
+            if (choice.equals("")) {
+                String key = Util.randomSlang(slangWord);
                 System.out.printf("%s", key);
                 System.out.print(Util.insertSpace(key.length(), 15)); // 15 la do dai khoang cach
                 System.out.printf("%s\n", slangWord.get(key));
 
+                System.out.print("Tiep tuc? ");
+                choice = ip.nextLine();
+                choice = choice.toUpperCase();
+            } else
+                return;
+        }
+    }
+
+    public static void quizSlangWord() {
+        System.out.println("               Do vui Slang word             ");
+        System.out.println("Quy tac: - ENTER de tiep tuc, cac phim khac de thoat.");
+        System.out.println("         - Nhap A, B, C, D de tra loi cau hoi voi dap an tuong ung.");
+
+        String[] ansFormat = { "A", "B", "C", "D" };
+        String choice = "";
+        while (true) {
+            System.out.println("               ------------");
+            if (choice.equals("")) {
+                String key = Util.randomSlang(slangWord);
+                System.out.printf("Cau hoi: %s nghia la gi\n", key);
+
+                Set<String> answer = new HashSet<>();
+                answer.add(slangWord.get(key));
+                while (answer.size() < 4) {
+                    String definition = Util.randomDefinition(slangWord);
+                    if (definition != null)
+                        answer.add(definition);
+                }
+
+                String ans = "";
+                Iterator<String> it1 = answer.iterator();
+                for (int i = 1; i <= 4; i++) {
+                    String def = it1.next();
+                    System.out.printf("%s. %s", ansFormat[i - 1], def);
+
+                    if (def.equals(slangWord.get(key))) // lưu vị trí kết quả
+                        ans = ansFormat[i - 1];
+                    if (i % 2 == 1)
+                        System.out.print(Util.insertSpace(def.length(), 60)); // 60 dựa vào đáp án gần như dài nhất
+                    else
+                        System.out.println();
+
+                }
+                System.out.print("Dap an cua ban: ");
+                choice = ip.nextLine();
+                if (choice.equals(ans))
+                    System.out.print("Chinh xac!!! Ban gioi qua!\n");
+                else
+                    System.out.printf("Tiec qua @@ Dap an chinh xac phai la %s. %s\n",ans, slangWord.get(key));
                 System.out.print("Tiep tuc? ");
                 choice = ip.nextLine();
                 choice = choice.toUpperCase();
