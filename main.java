@@ -1,6 +1,7 @@
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -19,27 +20,36 @@ public class main {
     static ArrayList<String> history = new ArrayList<>();
 
     public static void main(String[] args) {
-        try (BufferedReader bufferedReader = new BufferedReader(new FileReader("slang.txt"))) {
+        // Kiểm tra file tồn tại hay chưa
+        File f = new File("slang.txt");
+        String dataFile;
+        if (f.exists())
+            dataFile = "slang.txt";
+        else
+            dataFile = "slang-origin.txt";
+
+        BufferedReader bufferedReader;
+        try {
+            bufferedReader = new BufferedReader(new FileReader(dataFile));
             String temp;
             while ((temp = bufferedReader.readLine()) != null) {
                 String[] in = temp.split("`");
                 slangWord.put(in[0], in[1]);
             }
             bufferedReader.close();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+        } catch (Exception e) {
+            // TODO: handle exception
         }
 
-        try (BufferedReader fHistory = new BufferedReader(new FileReader("history.txt"))) {
+        try {
+            BufferedReader fHistory = new BufferedReader(new FileReader("history.txt"));
             int n = Integer.parseInt(fHistory.readLine());
             // fHistory.readLine();
             for (int i = 0; i < n; i++)
                 history.add(fHistory.readLine());
             fHistory.close();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+        } catch (Exception e) {
+            // TODO: handle exception
         }
 
         int choice = 1;
@@ -71,6 +81,9 @@ public class main {
                     break;
                 case 6:
                     delSlangWord();
+                    break;
+                case 7:
+                    resetSlangWord();
                     break;
             }
         }
@@ -141,7 +154,8 @@ public class main {
 
     public static void saveFiles() {
         // Lưu file history
-        try (BufferedWriter fHistory = new BufferedWriter(new FileWriter("history.txt"))) {
+        try {
+            BufferedWriter fHistory = new BufferedWriter(new FileWriter("history.txt"));
             fHistory.write(String.valueOf(history.size()));
             fHistory.write("\n");
             for (int i = 0; i < history.size(); i++) {
@@ -149,6 +163,20 @@ public class main {
                 fHistory.write("\n");
             }
             fHistory.close();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        // Lưu file slangword
+        try {
+            BufferedWriter fSlang = new BufferedWriter(new FileWriter("slang.txt"));
+           
+            for (String key : slangWord.keySet()) {
+                fSlang.write(key + "`" + slangWord.get(key));
+                fSlang.write("\n");
+            }
+            fSlang.close();
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -234,6 +262,37 @@ public class main {
                 }
                 System.out.print("Ky tu ban nhap khong dung voi yeu cau, moi nhap lai! (Y/YES, N/NO) ");
             }
+        }
+    }
+
+    public static void resetSlangWord() {
+        System.out.print("Ban co chac chan muon reset slang word khong? (Y/YES, N/NO) ");
+        while (true) {
+            String choice = ip.nextLine();
+            choice = choice.toUpperCase();
+            if (choice.equals("Y") || choice.equals("YES")) {
+                slangWord.clear();
+
+                try (BufferedReader bufferedReader = new BufferedReader(new FileReader("slang-origin.txt"))) {
+                    String temp;
+                    while ((temp = bufferedReader.readLine()) != null) {
+                        String[] in = temp.split("`");
+                        slangWord.put(in[0], in[1]);
+                    }
+                    bufferedReader.close();
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+
+                System.out.println("Da reset thanh cong");
+                ip.nextLine();
+                return;
+            } else {
+                if (choice.equals("N") || choice.equals("NO"))
+                    return;
+            }
+            System.out.print("Ky tu ban nhap khong dung voi yeu cau, moi nhap lai! (Y/YES, N/NO) ");
         }
     }
 }
