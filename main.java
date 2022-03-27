@@ -66,6 +66,9 @@ public class main {
                 case 4:
                     addSlangWord();
                     break;
+                case 5:
+                    editSlangWord();
+                    break;
             }
         }
         ip.close();
@@ -160,6 +163,44 @@ public class main {
             String definition = ip.nextLine();
             slangWord.put(key, definition);
             System.out.println("Da them thanh cong");
+            ip.nextLine();
+        }
+    }
+
+    public static void editSlangWord() {
+        System.out.print("Moi nhap Slang word muon chinh sua: ");
+        String key = ip.nextLine();
+        if (!slangWord.containsKey(key)) {
+            System.out.printf("%s khong ton tai", key);
+            ip.nextLine();
+        } else {
+            System.out.printf("%s", key);
+            System.out.print(Util.insertSpace(key.length(), 15)); // 15 la do dai khoang cach
+            System.out.printf("%s\n", slangWord.get(key));
+
+            System.out.println("Nhap thong tin muon thay doi, neu khong muon thay doi thi nhan ENTER");
+            System.out.print("Slang word: ");
+            String keyNew = ip.nextLine();
+            while (slangWord.containsKey(keyNew) && !keyNew.equals(key)) {
+                System.out.printf("Slang word %s da ton tai, moi nhap lai\n", keyNew);
+                System.out.print("Slang word: ");
+                keyNew = ip.nextLine();
+            }
+            System.out.print("Definition: ");
+            String definitionNew = ip.nextLine();
+            if (keyNew != "" && !keyNew.equals(key)) {
+                if (definitionNew != "") {
+                    slangWord.put(keyNew, definitionNew);
+                } else {
+                    slangWord.put(keyNew, slangWord.get(key));
+                }  
+                slangWord.remove(key,slangWord.get(key)); 
+            } else {
+                if (definitionNew != "") {
+                    slangWord.replace(key, definitionNew);
+                }  
+            }
+            System.out.println("Da chinh sua thanh cong");
             ip.nextLine();
         }
     }
