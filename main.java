@@ -287,7 +287,7 @@ public class main {
             if (choice.equals("Y") || choice.equals("YES")) {
                 slangWord.clear();
 
-                try (BufferedReader bufferedReader = new BufferedReader(new FileReader("slang-origin.txt"))) {
+                try (BufferedReader bufferedReader = new BufferedReader(new FileReader("file/slang-origin.txt"))) {
                     String temp;
                     while ((temp = bufferedReader.readLine()) != null) {
                         String[] in = temp.split("`");
