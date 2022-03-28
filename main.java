@@ -20,7 +20,7 @@ import java.util.Set;
 
 import Util.Util;
 
-public class main {
+public class Main {
     static Scanner ip = new Scanner(System.in);
     static Map<String, String> slangWord = new HashMap<>();
     static ArrayList<String> history = new ArrayList<>();
@@ -28,7 +28,7 @@ public class main {
 
     public static void main(String[] args) {
         // Kiểm tra file tồn tại hay chưa
-        File f = new File("slang.txt");
+        File f = new File("file/slang.txt");
         String dataFile;
         if (f.exists())
             dataFile = "file/slang.txt";

@@ -1,4 +1,4 @@
-104
+120
 26::Mar::2022 01::14::54     NEG            Negative
 26::Mar::2022 01::14::57     AMA            Ask Me Anything
 26::Mar::2022 01::15::21     NTTAWWT        Not That There's Anything Wrong With That
@@ -103,3 +103,19 @@
 28::Mar::2022 10::35::46     WHO            null
 28::Mar::2022 10::35::53     NAM            Nguyen Anh Minh
 28::Mar::2022 10::36::04     NAM            null
+28::Mar::2022 10::59::46     NTTAWWT        Not That There's Anything Wrong With That
+28::Mar::2022 10::59::46     ATYS           Anything You Say
+28::Mar::2022 10::59::46     NEFIN          Anything
+28::Mar::2022 10::59::46     MTA            More Than Anything
+28::Mar::2022 10::59::46     OWT            Anything
+28::Mar::2022 10::59::46     AMAA           Ask Me Almost Anything
+28::Mar::2022 10::59::46     IYBTYBA        If You Believe That, You'll Believe Anything
+28::Mar::2022 10::59::46     AMA            Ask Me Anything
+28::Mar::2022 11::00::55     NAMEAN         Do you know what I mean?
+28::Mar::2022 11::00::55     MERP           Meaningless word for when you don't know what else to say
+28::Mar::2022 11::00::55     WHO            w w
+28::Mar::2022 11::00::55     NAHMEAN        You know what I mean
+28::Mar::2022 11::53::51     WHO            null
+28::Mar::2022 11::54::05     WHO            null
+28::Mar::2022 11::54::27     WHO            World Health Organization
+28::Mar::2022 11::54::33     WHO            World Health Organization
