@@ -2642,7 +2642,6 @@ FFN`Farewell For Now
 WHA`What
 FFR`Flash Flash Revolution| For Future Reference
 FFX`Final Fantasy 10 (game)
-WHO`World Health Organization
 STEEZY`Style With Ease
 WHT`What
 WHS`What He Said
@@ -5579,7 +5578,6 @@ NAL`Need A Life
 OTAY`Okay
 <_<`Sarcasm| look left
 NAK`Nursing At Keyboard
-NAM`NGUYEN ANH MINH
 NAP`Not A Problem
 TROL`Police patrol
 NAO`Now

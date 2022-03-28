@@ -29,9 +29,9 @@ public class main {
         File f = new File("slang.txt");
         String dataFile;
         if (f.exists())
-            dataFile = "slang.txt";
+            dataFile = "file/slang.txt";
         else
-            dataFile = "slang-origin.txt";
+            dataFile = "file/slang-origin.txt";
 
         BufferedReader bufferedReader;
         try {
@@ -47,7 +47,7 @@ public class main {
         }
 
         try {
-            BufferedReader fHistory = new BufferedReader(new FileReader("history.txt"));
+            BufferedReader fHistory = new BufferedReader(new FileReader("file/history.txt"));
             int n = Integer.parseInt(fHistory.readLine());
             // fHistory.readLine();
             for (int i = 0; i < n; i++)
@@ -169,7 +169,7 @@ public class main {
     public static void saveFiles() {
         // Lưu file history
         try {
-            BufferedWriter fHistory = new BufferedWriter(new FileWriter("history.txt"));
+            BufferedWriter fHistory = new BufferedWriter(new FileWriter("file/history.txt"));
             fHistory.write(String.valueOf(history.size()));
             fHistory.write("\n");
             for (int i = 0; i < history.size(); i++) {
@@ -184,7 +184,7 @@ public class main {
 
         // Lưu file slangword
         try {
-            BufferedWriter fSlang = new BufferedWriter(new FileWriter("slang.txt"));
+            BufferedWriter fSlang = new BufferedWriter(new FileWriter("file/slang.txt"));
 
             for (String key : slangWord.keySet()) {
                 fSlang.write(key + "`" + slangWord.get(key));

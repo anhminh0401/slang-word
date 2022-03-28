@@ -1,0 +1,73 @@
+72
+26::Mar::2022 01::14::54     NEG            Negative
+26::Mar::2022 01::14::57     AMA            Ask Me Anything
+26::Mar::2022 01::15::21     NTTAWWT        Not That There's Anything Wrong With That
+26::Mar::2022 01::15::21     ATYS           Anything You Say
+26::Mar::2022 01::15::21     NEFIN          Anything
+26::Mar::2022 01::15::21     MTA            More Than Anything
+26::Mar::2022 01::15::21     OWT            Anything
+26::Mar::2022 01::15::21     AMAA           Ask Me Almost Anything
+26::Mar::2022 01::15::21     IYBTYBA        If You Believe That, You'll Believe Anything
+26::Mar::2022 01::15::21     AMA            Ask Me Anything
+26::Mar::2022 01::15::43     GEN            Information
+26::Mar::2022 11::35::06     NEG            Negative
+26::Mar::2022 11::36::14     WHO            World Health Organization
+27::Mar::2022 17::44::39     NEG            Negative
+27::Mar::2022 17::45::25     WHO            World Health Organization
+27::Mar::2022 22::02::55     XX             Kisses
+27::Mar::2022 22::25::39     WHO            World Health Organization
+27::Mar::2022 23::14::29     TTT            Third Tier Toilet| bad school
+27::Mar::2022 23::14::47     D&M            Deep and Meaningful
+27::Mar::2022 23::14::47     :\             Emoticon Meaning Confusion
+27::Mar::2022 23::14::47     DMC            Deep Meaningful Conversation
+27::Mar::2022 23::14::47     DNM            Does Not Matter| Deep and Meaningful
+27::Mar::2022 23::14::47     MERP           Meaningless word for when you don't know what else to say
+27::Mar::2022 23::14::47     IBMTS          I've Been Meaning To Say
+27::Mar::2022 23::14::47     Slag           Meaning
+27::Mar::2022 23::16::51     NAM            Nguyen Anh Minh
+27::Mar::2022 23::17::12     NAM            NGUYEN ANH MINH
+28::Mar::2022 09::11::12     NEG            Negative
+28::Mar::2022 09::12::15     NEG            Negative
+28::Mar::2022 09::12::25     HDMI           High Definition Multimedia Interface
+28::Mar::2022 09::12::25     HDTV           High Definition Television
+28::Mar::2022 09::12::25     HD             High-Definition
+28::Mar::2022 09::16::47     WHO            World Health Organization
+28::Mar::2022 09::17::01     NEG            Negative
+28::Mar::2022 09::17::11     DWTTAI         Don't Want To Talk About It
+28::Mar::2022 09::17::11     TAI            Think About It
+28::Mar::2022 09::17::11     TAY            Thinking About You
+28::Mar::2022 09::17::11     WYWTA          What You Wanna Talk About
+28::Mar::2022 09::17::11     WRUTA          What Are You Talking About?
+28::Mar::2022 09::17::11     WSWTA          What Shall We Talk About?
+28::Mar::2022 09::17::11     SPERG          Dramatically Passionate Or Obsessive About A Subject
+28::Mar::2022 09::17::11     ABT2           About To
+28::Mar::2022 09::17::11     FITTIN TO      About to| getting ready to
+28::Mar::2022 09::17::11     WAU            What About You?
+28::Mar::2022 09::17::11     WBU            What About You?
+28::Mar::2022 09::17::11     FAI            Forget About It
+28::Mar::2022 09::17::11     GAG            About to throw up| Joke
+28::Mar::2022 09::17::11     IDWTAI         I Don't Wanna Talk About It
+28::Mar::2022 09::17::11     HBN            How About Now
+28::Mar::2022 09::17::11     HBU            How About You?
+28::Mar::2022 09::17::11     HBY            How About You?
+28::Mar::2022 09::17::11     TMAI           Tell Me About It
+28::Mar::2022 09::17::11     WDYWTTA        What Do You Want To Talk About?
+28::Mar::2022 09::17::11     FIXIN TO       About to| getting ready to
+28::Mar::2022 09::17::11     TWITA          That's What I'm Talking About
+28::Mar::2022 09::17::11     DETAI          Don't Even Think About It
+28::Mar::2022 09::17::11     WRYTA          What Are You Talking About?
+28::Mar::2022 09::17::11     WAYOA          What Are You On About?
+28::Mar::2022 09::17::11     WYTA           What You Talking About?
+28::Mar::2022 09::17::11     WAYTA          What Are You Talking About
+28::Mar::2022 09::17::11     TOMBOUT        Talking About
+28::Mar::2022 09::17::11     ICSTAY         I Can't Stop Thinking About You
+28::Mar::2022 09::17::11     NQAT           No Question About That
+28::Mar::2022 09::17::11     FINA           About to do
+28::Mar::2022 09::17::11     ITAI           I'll Think About It
+28::Mar::2022 09::17::11     ICAY           I Care About You
+28::Mar::2022 09::17::11     BOUT           About
+28::Mar::2022 09::17::11     WUWTA          What You Wanna Talk About?
+28::Mar::2022 09::17::11     DWAI           Don't Worry About It
+28::Mar::2022 09::17::11     ABT            About
+28::Mar::2022 09::17::11     HBU?           How About You?
+28::Mar::2022 09::18::41     IT             Information teachnology
